@@ -9,8 +9,8 @@ namespace YemekTarifleri.Entities.Concrete
 {
     public class Category:IEntity
     {
-        public int Id { get; set; }
-        public string CategoryName { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string CategoryName { get; set; }
 
     }
 }
