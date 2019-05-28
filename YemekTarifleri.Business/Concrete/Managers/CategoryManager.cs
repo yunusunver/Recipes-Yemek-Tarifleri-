@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using YemekTarifleri.Business.Abstract;
 using YemekTarifleri.Business.ValidationRules.FluentValidation;
 using YemekTarifleri.Core.Aspects.Postsharp;
+using YemekTarifleri.Core.Aspects.Postsharp.ValidationAspects;
 using YemekTarifleri.DataAccess.Abstract;
 using YemekTarifleri.Entities.Concrete;
 

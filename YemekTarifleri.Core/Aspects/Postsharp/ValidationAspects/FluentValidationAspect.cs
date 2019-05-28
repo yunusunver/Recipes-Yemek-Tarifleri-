@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using FluentValidation;
 using PostSharp.Aspects;
 using YemekTarifleri.Core.CrossCuttingConcerns.Validation.FluentValidation;
 
-namespace YemekTarifleri.Core.Aspects.Postsharp
+namespace YemekTarifleri.Core.Aspects.Postsharp.ValidationAspects
 {
     [Serializable]
     public class FluentValidationAspect:OnMethodBoundaryAspect
