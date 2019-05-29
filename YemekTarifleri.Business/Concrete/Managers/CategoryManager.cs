@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using YemekTarifleri.Business.Abstract;
 using YemekTarifleri.Business.ValidationRules.FluentValidation;
 using YemekTarifleri.Core.Aspects.Postsharp;
+using YemekTarifleri.Core.Aspects.Postsharp.CacheAspects;
 using YemekTarifleri.Core.Aspects.Postsharp.ValidationAspects;
+using YemekTarifleri.Core.CrossCuttingConcerns.Caching.Microsoft;
 using YemekTarifleri.DataAccess.Abstract;
 using YemekTarifleri.Entities.Concrete;
 
@@ -21,6 +23,7 @@ namespace YemekTarifleri.Business.Concrete.Managers
             _categoryDal = categoryDal;
         }
 
+        [CacheAspect(typeof(MemoryCacheManager),60)]
         public List<Category> GetAll()
         {
             return _categoryDal.GetList();
@@ -31,6 +34,7 @@ namespace YemekTarifleri.Business.Concrete.Managers
             return _categoryDal.Get(x => x.Id == id);
         }
         [FluentValidationAspect(typeof(CategoryValidator))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Category Add(Category category)
         {
             return _categoryDal.Add(category);
