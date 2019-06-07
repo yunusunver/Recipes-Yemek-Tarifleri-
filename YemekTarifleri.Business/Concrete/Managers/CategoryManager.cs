@@ -7,10 +7,13 @@ using YemekTarifleri.Business.Abstract;
 using YemekTarifleri.Business.ValidationRules.FluentValidation;
 using YemekTarifleri.Core.Aspects.Postsharp;
 using YemekTarifleri.Core.Aspects.Postsharp.CacheAspects;
+using YemekTarifleri.Core.Aspects.Postsharp.LogAspects;
 using YemekTarifleri.Core.Aspects.Postsharp.ValidationAspects;
 using YemekTarifleri.Core.CrossCuttingConcerns.Caching.Microsoft;
+using YemekTarifleri.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using YemekTarifleri.DataAccess.Abstract;
 using YemekTarifleri.Entities.Concrete;
+
 
 namespace YemekTarifleri.Business.Concrete.Managers
 {
@@ -24,6 +27,7 @@ namespace YemekTarifleri.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager),60)]
+        [LogAspect(typeof(DatabaseLogger))]
         public List<Category> GetAll()
         {
             return _categoryDal.GetList();
