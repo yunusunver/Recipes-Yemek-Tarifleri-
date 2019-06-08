@@ -36,7 +36,7 @@ namespace YemekTarifleri.Core.Aspects.Postsharp.LogAspects
 
         public override void OnEntry(MethodExecutionArgs args)
         {
-            if (_loggerService.isInfoEnabled)
+            if (!_loggerService.isInfoEnabled)
             {
                 return;
             }

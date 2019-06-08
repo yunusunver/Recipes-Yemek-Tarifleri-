@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using YemekTarifleri.Business.DependencyResolvers.Ninject;
+using YemekTarifleri.Core.Utilities.Mvc.Infrastructure;
 
 namespace YemekTarifleri.MvcWebUI
 {
@@ -13,6 +15,8 @@ namespace YemekTarifleri.MvcWebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
         }
     }
 }

@@ -28,6 +28,7 @@ namespace YemekTarifleri.Business.Concrete.Managers
 
         [CacheAspect(typeof(MemoryCacheManager),60)]
         [LogAspect(typeof(DatabaseLogger))]
+        [LogAspect(typeof(FileLogger))]
         public List<Category> GetAll()
         {
             return _categoryDal.GetList();
