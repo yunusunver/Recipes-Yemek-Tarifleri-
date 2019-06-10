@@ -16,6 +16,7 @@ namespace YemekTarifleri.DataAccess.Concrete.EntityFramework
             Database.SetInitializer<FoodContext>(null);
         }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
