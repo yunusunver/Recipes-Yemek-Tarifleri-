@@ -74,7 +74,9 @@
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\FoodContext.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\RoleMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\UserMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\UserRoleMap.cs" />
     <Compile Include="Concrete\NHibernate\Helpers\SqlServerHelper.cs" />
     <Compile Include="Concrete\NHibernate\Mappings\CategoryMap.cs" />
     <Compile Include="Concrete\NHibernate\NhCategoryDal.cs" />

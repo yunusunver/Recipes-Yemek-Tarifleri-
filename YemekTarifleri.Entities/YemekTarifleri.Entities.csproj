@@ -58,8 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplexTypes\UserRoleItem.cs" />
     <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\Role.cs" />
     <Compile Include="Concrete\User.cs" />
+    <Compile Include="Concrete\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,8 +74,6 @@
       <Name>YemekTarifleri.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ComplexTypes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
