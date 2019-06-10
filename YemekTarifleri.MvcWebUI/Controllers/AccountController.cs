@@ -3,17 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using YemekTarifleri.Business.Abstract;
 using YemekTarifleri.Core.CrossCuttingConcerns.Security.Web;
 
 namespace YemekTarifleri.MvcWebUI.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
-        public string Login()
+        private IUserService _userService;
+
+        public AccountController(IUserService userService)
         {
-            AuthenticationHelper.CreateAuthCookie(new Guid(),"yunus","yunus@gmail.com",DateTime.Now.AddDays(15),new []{"Admin"},false,"yunus","ünver");
-            return "Access denied.";
+            _userService = userService;
+        }
+
+
+        // GET: Account
+        public string Login(string userName,string password)
+        {
+            var user = _userService.GetByUserNameAndPassword(userName, password);
+            if (user != null)
+            {
+                AuthenticationHelper.CreateAuthCookie(
+                    new Guid(), 
+                    user.UserName,
+                    user.Email, 
+                    DateTime.Now.AddDays(15), 
+                    new[] { "Admin" },
+                    false, 
+                    user.FirstName, 
+                    user.LastName
+                    );
+                return "Access denied.";
+            }
+
+            return "Not Authenticated";
         }
     }
 }
