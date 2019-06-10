@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using YemekTarifleri.Business.Abstract;
 using YemekTarifleri.Business.ValidationRules.FluentValidation;
 using YemekTarifleri.Core.Aspects.Postsharp;
+using YemekTarifleri.Core.Aspects.Postsharp.AuthorizationAspects;
 using YemekTarifleri.Core.Aspects.Postsharp.CacheAspects;
 using YemekTarifleri.Core.Aspects.Postsharp.LogAspects;
 using YemekTarifleri.Core.Aspects.Postsharp.ValidationAspects;
@@ -27,6 +28,7 @@ namespace YemekTarifleri.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager),60)]
+        [SecuredOperation(Roles = "Admin")]
         public List<Category> GetAll()
         {
             return _categoryDal.GetList();
