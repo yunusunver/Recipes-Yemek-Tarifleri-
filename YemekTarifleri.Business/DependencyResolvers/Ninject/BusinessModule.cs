@@ -10,6 +10,7 @@ using YemekTarifleri.Business.Concrete.Managers;
 using YemekTarifleri.Core.DataAccess.NHibernate;
 using YemekTarifleri.DataAccess.Abstract;
 using YemekTarifleri.DataAccess.Concrete.EntityFramework;
+using YemekTarifleri.DataAccess.Concrete.NHibernate;
 using YemekTarifleri.DataAccess.Concrete.NHibernate.Helpers;
 
 namespace YemekTarifleri.Business.DependencyResolvers.Ninject

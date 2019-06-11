@@ -28,7 +28,7 @@ namespace YemekTarifleri.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager),60)]
-        [SecuredOperation(Roles = "Admin")]
+       // [SecuredOperation(Roles = "Admin")]
         public List<Category> GetAll()
         {
             return _categoryDal.GetList();
