@@ -12,6 +12,7 @@ using YemekTarifleri.Core.Aspects.Postsharp.LogAspects;
 using YemekTarifleri.Core.Aspects.Postsharp.ValidationAspects;
 using YemekTarifleri.Core.CrossCuttingConcerns.Caching.Microsoft;
 using YemekTarifleri.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using YemekTarifleri.Core.Utilities.Mapping;
 using YemekTarifleri.DataAccess.Abstract;
 using YemekTarifleri.Entities.Concrete;
 
@@ -31,7 +32,8 @@ namespace YemekTarifleri.Business.Concrete.Managers
        // [SecuredOperation(Roles = "Admin")]
         public List<Category> GetAll()
         {
-            return _categoryDal.GetList();
+            var categories = AutoMapperHelper.MapToSameTypeList(_categoryDal.GetList());
+            return categories;
         }
 
         public Category GetById(int id)
