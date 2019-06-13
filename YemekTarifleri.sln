@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YemekTarifleri.Business.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YemekTarifleri.WebApi", "YemekTarifleri.WebApi\YemekTarifleri.WebApi.csproj", "{C32BAA9A-C97D-44A0-B917-73E2775F270F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YemekTarifleri.MvcAngularUI", "YemekTarifleri.MvcAngularUI\YemekTarifleri.MvcAngularUI.csproj", "{D5E6D450-FB52-4D10-AD37-69FC22ED230D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{C32BAA9A-C97D-44A0-B917-73E2775F270F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C32BAA9A-C97D-44A0-B917-73E2775F270F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C32BAA9A-C97D-44A0-B917-73E2775F270F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E6D450-FB52-4D10-AD37-69FC22ED230D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E6D450-FB52-4D10-AD37-69FC22ED230D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E6D450-FB52-4D10-AD37-69FC22ED230D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E6D450-FB52-4D10-AD37-69FC22ED230D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
