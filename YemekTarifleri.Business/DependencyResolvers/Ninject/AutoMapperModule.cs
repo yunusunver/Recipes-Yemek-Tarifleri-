@@ -12,7 +12,7 @@ namespace YemekTarifleri.Business.DependencyResolvers.Ninject
     {
         public override void Load()
         {
-            Bind<IMapper>().ToConstant(CreateConfiguration().CreateMapper());
+            Bind<IMapper>().ToConstant(CreateConfiguration().CreateMapper()).InSingletonScope();
         }
 
         private MapperConfiguration CreateConfiguration()

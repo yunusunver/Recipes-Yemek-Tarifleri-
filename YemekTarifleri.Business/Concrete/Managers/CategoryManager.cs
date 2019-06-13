@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using YemekTarifleri.Business.Abstract;
 using YemekTarifleri.Business.ValidationRules.FluentValidation;
 using YemekTarifleri.Core.Aspects.Postsharp;
@@ -22,17 +23,19 @@ namespace YemekTarifleri.Business.Concrete.Managers
     public class CategoryManager:ICategoryService
     {
         private ICategoryDal _categoryDal;
+        private readonly IMapper _mapper;
 
-        public CategoryManager(ICategoryDal categoryDal)
+        public CategoryManager(ICategoryDal categoryDal,IMapper mapper)
         {
             _categoryDal = categoryDal;
+            _mapper = mapper;
         }
 
         [CacheAspect(typeof(MemoryCacheManager),60)]
        // [SecuredOperation(Roles = "Admin")]
         public List<Category> GetAll()
         {
-            var categories = AutoMapperHelper.MapToSameTypeList(_categoryDal.GetList());
+            var categories = _mapper.Map<List<Category>>(_categoryDal.GetList());
             return categories;
         }
 

@@ -14,9 +14,9 @@ namespace YemekTarifleri.Core.Utilities.Mvc.Infrastructure
     {
         private IKernel _kernel;
 
-        public NinjectControllerFactory(INinjectModule module)
+        public NinjectControllerFactory(params INinjectModule[] modules)
         {
-            _kernel = new StandardKernel(module);
+            _kernel = new StandardKernel(modules);
         }
 
         protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
