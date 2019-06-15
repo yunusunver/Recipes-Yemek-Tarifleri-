@@ -22,6 +22,9 @@ namespace YemekTarifleri.Business.DependencyResolvers.Ninject
             Bind<ICategoryService>().To<CategoryManager>().InSingletonScope();
             Bind<ICategoryDal>().To<EfCategoryDal>();
 
+            Bind<IMealDal>().To<EfMealDal>();
+            Bind<IMealService>().To<MealManager>().InSingletonScope();
+
             Bind<IUserDal>().To<EfUserDal>();
             Bind<IUserService>().To<UserManager>().InSingletonScope();
 
