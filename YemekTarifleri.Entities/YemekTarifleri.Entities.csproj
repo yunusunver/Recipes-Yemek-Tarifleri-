@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="ComplexTypes\UserRoleItem.cs" />
     <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\Meal.cs" />
     <Compile Include="Concrete\Role.cs" />
     <Compile Include="Concrete\User.cs" />
     <Compile Include="Concrete\UserRole.cs" />
