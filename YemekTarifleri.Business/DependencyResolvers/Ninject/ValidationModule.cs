@@ -15,6 +15,7 @@ namespace YemekTarifleri.Business.DependencyResolvers.Ninject
         public override void Load()
         {
             Bind<IValidator<Category>>().To<CategoryValidator>();
+            Bind<IValidator<Meal>>().To<MealValidator>();
         }
     }
 }
