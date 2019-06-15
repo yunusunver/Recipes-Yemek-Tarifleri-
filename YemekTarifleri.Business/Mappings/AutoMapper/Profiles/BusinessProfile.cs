@@ -13,6 +13,7 @@ namespace YemekTarifleri.Business.Mappings.AutoMapper.Profiles
         public BusinessProfile()
         {
             CreateMap<Category, Category>();
+            CreateMap<Meal, Meal>();
         }
     }
 }
