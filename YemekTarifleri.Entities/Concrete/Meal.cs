@@ -9,5 +9,6 @@ namespace YemekTarifleri.Entities.Concrete
 {
     public class Meal:IEntity
     {
+        public int Id { get; set; }
     }
 }
