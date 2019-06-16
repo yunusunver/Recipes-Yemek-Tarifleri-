@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YemekTarifleri.Business.Abstract;
+using YemekTarifleri.MvcWebUI.Models;
 
 namespace YemekTarifleri.MvcWebUI.Controllers
 {
