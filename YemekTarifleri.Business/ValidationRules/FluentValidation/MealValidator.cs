@@ -13,6 +13,12 @@ namespace YemekTarifleri.Business.ValidationRules.FluentValidation
         public MealValidator()
         {
             RuleFor(x => x.Id).NotEmpty();
+            RuleFor(x => x.CookingTime).NotEmpty();
+            RuleFor(x => x.Description).NotEmpty();
+            RuleFor(x => x.Image).NotEmpty();
+            RuleFor(x => x.Name).NotEmpty();
+            RuleFor(x => x.PersonQuantity).NotEmpty();
+            RuleFor(x => x.PreparationTime).NotEmpty();
         }
     }
 }
