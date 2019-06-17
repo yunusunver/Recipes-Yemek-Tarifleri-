@@ -19,10 +19,11 @@ namespace YemekTarifleri.DataAccess.Concrete.EntityFramework
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
-        public DbSet<Meal> Meal { get; set; }
+        public DbSet<Meal> Meals { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CategoryMap());
+            modelBuilder.Configurations.Add(new MealMap());
         }
     }
 }

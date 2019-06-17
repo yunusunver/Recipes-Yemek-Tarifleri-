@@ -24,7 +24,7 @@ namespace YemekTarifleri.MvcWebUI.Controllers
             {
                 Meals=_mealService.GetAll()
             };
-            return View();
+            return View(model);
         }
     }
 }

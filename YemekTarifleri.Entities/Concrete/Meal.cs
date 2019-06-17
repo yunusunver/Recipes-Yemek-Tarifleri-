@@ -9,17 +9,17 @@ namespace YemekTarifleri.Entities.Concrete
 {
     public class Meal:IEntity
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public int  CategoryId { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string CookingTime { get; set; }
-        public string PersonQuantity { get; set; }
-        public string PreparationTime { get; set; }
-        public string Point { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public string Image { get; set; }
+        public virtual int Id { get; set; }
+        public virtual int UserId { get; set; }
+        public virtual int  CategoryId { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Description { get; set; }
+        public virtual string CookingTime { get; set; }
+        public virtual string PersonQuantity { get; set; }
+        public virtual string PreparationTime { get; set; }
+        public virtual string Point { get; set; }
+        public virtual DateTime CreatedDate { get; set; }
+        public virtual string Image { get; set; }
 
     }
 }
