@@ -6,19 +6,37 @@
 
 <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-<div>
-    
-    @foreach (var item in Model.Categories)
-    {
-        @item.CategoryName
-        <br/>
-    }
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"><i class="icon-th"></i></span>
+        <h5>Data table</h5>
+    </div>
+    <div class="widget-content nopadding">
+        <table class="table table-bordered data-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Kategori Adı</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+             @foreach (var category in Model.Categories)
+             {
+                 <tr class="gradeC">
+                     <td>@category.Id</td>
+                     <td>@category.CategoryName</td>
+                     <td>    
+                         <button class="btn btn-success">Ekle</button>
+                         <button class="btn btn-info">Güncelle</button>
+                         <button class="btn btn-danger">Sil</button>
+                     </td>
+                    
+                 </tr>
+             }
+
+            </tbody>
+        </table>
+    </div>
 </div>
-</body>
-</html>

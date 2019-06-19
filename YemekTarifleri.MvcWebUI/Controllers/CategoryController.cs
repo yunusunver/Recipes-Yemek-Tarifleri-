@@ -27,5 +27,17 @@ namespace YemekTarifleri.MvcWebUI.Controllers
             };
             return View(model);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Category category)
+        {
+            _categoryService.Add(category);
+            return RedirectToAction("Index");
+        }
     }
 }
