@@ -103,7 +103,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\others\animate.css" />
+    <Content Include="Content\css\others\font-awesome.min.css" />
+    <Content Include="Content\css\others\magnific-popup.css" />
+    <Content Include="Content\css\others\meanmenu.min.css" />
+    <Content Include="Content\css\others\owl.carousel.min.css" />
+    <Content Include="Content\css\others\pe-icon-7-stroke.css" />
+    <Content Include="Content\css\responsive\responsive.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\Pe-icon-7-stroke.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\fonts\Pe-icon-7-stroke.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -112,6 +131,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\TemplateScripts\js\active.js" />
+    <Content Include="Scripts\TemplateScripts\js\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\TemplateScripts\js\bootstrap\popper.min.js" />
+    <Content Include="Scripts\TemplateScripts\js\google-map\map-active.js" />
+    <Content Include="Scripts\TemplateScripts\js\jquery\jquery-2.2.4.min.js" />
+    <Content Include="Scripts\TemplateScripts\js\others\plugins.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +149,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryViewModel.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\MealViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
