@@ -40,6 +40,19 @@ namespace YemekTarifleri.MvcWebUI.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Update(int id)
+        {
+            var findCategory = _categoryService.GetById(id);
+            return View(findCategory);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Category category)
+        {
+            _categoryService.Update(category);
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Delete(int id)
         {
             var findCategory = _categoryService.GetById(id);

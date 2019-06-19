@@ -31,7 +31,7 @@
                         <td>@category.Id</td>
                         <td>@category.CategoryName</td>
                         <td>
-                            @Html.ActionLink("Düzenle", "Edit", new { id = category.Id }, new { @class = "btn btn-info" }) |
+                            @Html.ActionLink("Düzenle", "Update", new { id = category.Id }, new { @class = "btn btn-info" }) |
                             @Html.ActionLink("Sil", "Delete", new { id = category.Id }, new { @class = "btn btn-danger" })
                         </td>
 
