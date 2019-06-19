@@ -12,7 +12,6 @@ namespace YemekTarifleri.Business.ValidationRules.FluentValidation
     {
         public CategoryValidator()
         {
-            RuleFor(x => x.Id).NotEmpty();
             RuleFor(x => x.CategoryName).NotEmpty();
         }
     }

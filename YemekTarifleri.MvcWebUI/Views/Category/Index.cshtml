@@ -5,6 +5,8 @@
 }
 
 <!DOCTYPE html>
+<br/>
+@Html.ActionLink("Kategori Ekle", "Create", null, new { @class = "btn btn-success" })
 
 <div class="widget-box">
     <div class="widget-title">
@@ -12,6 +14,7 @@
         <h5>Data table</h5>
     </div>
     <div class="widget-content nopadding">
+
         <table class="table table-bordered data-table">
             <thead>
                 <tr>
@@ -21,20 +24,19 @@
                 </tr>
             </thead>
             <tbody>
-               
-             @foreach (var category in Model.Categories)
-             {
-                 <tr class="gradeC">
-                     <td>@category.Id</td>
-                     <td>@category.CategoryName</td>
-                     <td>    
-                         <button class="btn btn-success">Ekle</button>
-                         <button class="btn btn-info">Güncelle</button>
-                         <button class="btn btn-danger">Sil</button>
-                     </td>
-                    
-                 </tr>
-             }
+
+                @foreach (var category in Model.Categories)
+                {
+                    <tr class="gradeC">
+                        <td>@category.Id</td>
+                        <td>@category.CategoryName</td>
+                        <td>
+                            @Html.ActionLink("Düzenle", "Edit", new { id = category.Id }, new { @class = "btn btn-info" }) |
+                            @Html.ActionLink("Sil", "Delete", new { id = category.Id }, new { @class = "btn btn-danger" })
+                        </td>
+
+                    </tr>
+                }
 
             </tbody>
         </table>

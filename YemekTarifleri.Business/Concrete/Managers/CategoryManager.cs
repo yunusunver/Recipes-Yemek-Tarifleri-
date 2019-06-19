@@ -55,5 +55,10 @@ namespace YemekTarifleri.Business.Concrete.Managers
         {
             return _categoryDal.Update(category);
         }
+
+        public void Delete(Category category)
+        {
+            _categoryDal.Delete(category);
+        }
     }
 }

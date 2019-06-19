@@ -13,5 +13,6 @@ namespace YemekTarifleri.Business.Abstract
         Category GetById(int id);
         Category Add(Category category);
         Category Update(Category category);
+        void Delete(Category category);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace YemekTarifleri.DataAccess.Concrete.EntityFramework.Mappings
             ToTable(@"Category", @"dbo");
             HasKey(x => x.Id);
 
-            Property(x => x.Id).HasColumnName("Id");
+            Property(x => x.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.CategoryName).HasColumnName("CategoryName");
         }
     }
