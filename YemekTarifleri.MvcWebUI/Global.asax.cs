@@ -9,6 +9,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using YemekTarifleri.Business.DependencyResolvers.Ninject;
 using YemekTarifleri.Core.CrossCuttingConcerns.Security.Web;
+using YemekTarifleri.Core.CrossCuttingConcerns.Validation.FluentValidation;
 using YemekTarifleri.Core.Utilities.Mvc.Infrastructure;
 
 namespace YemekTarifleri.MvcWebUI
@@ -21,6 +22,10 @@ namespace YemekTarifleri.MvcWebUI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule(),new AutoMapperModule()));
+            FluentValidation.Mvc.FluentValidationModelValidatorProvider.Configure(provider =>
+            {
+                provider.ValidatorFactory = new NinjectValidationFactory(new ValidationModule());
+            });
         }
 
         public override void Init()

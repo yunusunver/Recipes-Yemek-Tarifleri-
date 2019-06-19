@@ -12,7 +12,7 @@ namespace YemekTarifleri.Business.ValidationRules.FluentValidation
     {
         public CategoryValidator()
         {
-            RuleFor(x => x.CategoryName).NotEmpty();
+            RuleFor(x => x.CategoryName).NotEmpty().WithMessage("Lütfen kategori ismini giriniz.");
         }
     }
 }

@@ -17,12 +17,11 @@
                 <div class="widget-content nopadding">
                     @using (Html.BeginForm(Html.BeginForm("Update", "Category", FormMethod.Post, new {enctype = "multipart/form-data", @class= "form-horizontal", name = "basic_validate" ,id = "basic_validate", novalidate = "novalidate" })))
                     {
-             
                         <div class="control-group">
                             <label class="control-label">Kategori Adı</label>
                             <div class="controls">
-                                @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { name = "required", id = "required" } })
-                          
+                                @Html.TextBoxFor(model => model.CategoryName, new { htmlAttributes = new { name = "required", id = "required" } })
+                                @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
                             </div>
                         </div>
 

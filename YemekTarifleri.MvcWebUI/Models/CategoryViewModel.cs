@@ -9,6 +9,7 @@ namespace YemekTarifleri.MvcWebUI.Models
     public class CategoryViewModel
     {
         public List<Category> Categories { get; set; }
+        public Category Category { get; set; }
 
     }
 }
