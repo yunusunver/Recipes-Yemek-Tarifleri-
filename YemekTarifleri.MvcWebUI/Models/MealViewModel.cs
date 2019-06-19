@@ -9,5 +9,6 @@ namespace YemekTarifleri.MvcWebUI.Models
     public class MealViewModel
     {
         public List<Meal> Meals { get; set; }
+        public Meal Meal { get; set; }
     }
 }

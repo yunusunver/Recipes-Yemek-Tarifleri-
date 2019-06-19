@@ -313,6 +313,7 @@
     <Content Include="Views\_LayoutAdmin.cshtml" />
     <Content Include="Views\Category\Create.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
+    <Content Include="Views\Meal\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -322,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\Meal\" />
     <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,7 @@ namespace YemekTarifleri.MvcWebUI.Models
     {
         public List<Category> Categories { get; set; }
         public Category Category { get; set; }
-
+        public List<User> Users { get; set; }
+        public Meal Meal { get; set; }
     }
 }
