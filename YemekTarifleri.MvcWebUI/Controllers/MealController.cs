@@ -51,5 +51,17 @@ namespace YemekTarifleri.MvcWebUI.Controllers
             _mealService.Add(meal);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Delete(int id)
+        {
+            var meal = _mealService.GetById(id);
+
+            if (System.IO.File.Exists(Server.MapPath(meal.Image)))
+            {
+                System.IO.File.Delete(Server.MapPath(meal.Image));
+            }
+            _mealService.Delete(meal);
+            return RedirectToAction("Index");
+        }
     }
 }
