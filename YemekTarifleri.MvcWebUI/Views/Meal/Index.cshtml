@@ -1,23 +1,60 @@
 ﻿@model YemekTarifleri.MvcWebUI.Models.MealViewModel
 
 @{
-    Layout = null;
+    Layout = "../_LayoutAdmin.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-<div>
-    @foreach (var item in Model.Meals)
-    {
-        @item.Name
-        <br/>
-    }
+<div id="content-header">
+    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> </a></div>
 </div>
-</body>
-</html>
+<!--End-breadcrumbs-->
+<!--Action boxes-->
+<div class="container-fluid">
+    <!DOCTYPE html>
+    <br/>
+    @Html.ActionLink("Yemek Ekle", "Create", null, new { @class = "btn btn-success" })
+
+    <div class="widget-box">
+        <div class="widget-title">
+            <span class="icon"><i class="icon-th"></i></span>
+            <h5>Data table</h5>
+        </div>
+        <div class="widget-content nopadding">
+
+            <table class="table table-bordered data-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Kategori Adı</th>
+                        <th>Kullanıcı Id</th>
+                        <th>Yemek Adı</th>
+                        <th>Açıklama</th>
+                        <th>Resim</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                @foreach (var meal in Model.Meals)
+                {
+                    <tr class="gradeC">
+                        <td>@meal.Id</td>
+                        <td>@meal.CategoryId</td>
+                        <td>@meal.UserId</td>
+                        <td>@meal.Name</td>
+                        <td>@meal.Description</td>
+                        <td>@meal.Image</td>
+                       
+
+                        <td>
+                            @Html.ActionLink("Düzenle", "Update", new { id = meal.Id }, new { @class = "btn btn-info" }) |
+                            @Html.ActionLink("Sil", "Delete", new { id = meal.Id }, new { @class = "btn btn-danger" })
+                        </td>
+
+                    </tr>
+                }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

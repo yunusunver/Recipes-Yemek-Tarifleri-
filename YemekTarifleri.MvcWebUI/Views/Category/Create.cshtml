@@ -4,33 +4,37 @@
     Layout = "~/Views/_LayoutAdmin.cshtml";
 }
 <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Form elements</a> <a href="#" class="current">Validation</a> </div>
-    <h1>Kategori Oluştur</h1>
+    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> </a></div>
 </div>
-<div class="container-fluid"><hr>
-<div class="row-fluid">
-    <div class="span12">
-        <div class="widget-box">
-            <div class="widget-title"> <span class="icon"> <i class="icon-info-sign"></i> </span>
-                <h5>Kategori Oluştur</h5>
-            </div>
-            <div class="widget-content nopadding">
-            @using (Html.BeginForm(Html.BeginForm("Create", "Category", FormMethod.Post, new {enctype = "multipart/form-data", @class= "form-horizontal", name = "basic_validate" ,id = "basic_validate", novalidate = "novalidate" })))
-            {
-             
-                    <div class="control-group">
-                        <label class="control-label">Kategori Adı</label>
-                        <div class="controls">
-                            @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { name = "required", id = "required" } })
-                          
-                        </div>
-                    </div>
+<!--End-breadcrumbs-->
+<!--Action boxes-->
+<div class="container-fluid">
 
-                    <div class="form-actions">
-                        <input type="submit" value="Oluştur" class="btn btn-success">
-                    </div>
+<div class="container-fluid"><hr>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"> <i class="icon-info-sign"></i> </span>
+                    <h5>Kategori Oluştur</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    @using (Html.BeginForm(Html.BeginForm("Create", "Category", FormMethod.Post, new {enctype = "multipart/form-data", @class= "form-horizontal", name = "basic_validate" ,id = "basic_validate", novalidate = "novalidate" })))
+                    {
              
-            }
+                        <div class="control-group">
+                            <label class="control-label">Kategori Adı</label>
+                            <div class="controls">
+                                @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { name = "required", id = "required" } })
+                                @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <input type="submit" value="Oluştur" class="btn btn-success">
+                        </div>
+             
+                    }
+                </div>
             </div>
         </div>
     </div>

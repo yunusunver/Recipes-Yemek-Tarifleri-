@@ -3,7 +3,12 @@
 @{
     Layout = "../_LayoutAdmin.cshtml";
 }
-
+<div id="content-header">
+    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> </a></div>
+</div>
+<!--End-breadcrumbs-->
+<!--Action boxes-->
+<div class="container-fluid">
 <!DOCTYPE html>
 <br/>
 @Html.ActionLink("Kategori Ekle", "Create", null, new { @class = "btn btn-success" })
@@ -17,28 +22,29 @@
 
         <table class="table table-bordered data-table">
             <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Kategori Adı</th>
-                    <th>İşlemler</th>
-                </tr>
+            <tr>
+                <th>Id</th>
+                <th>Kategori Adı</th>
+                <th>İşlemler</th>
+            </tr>
             </thead>
             <tbody>
 
-                @foreach (var category in Model.Categories)
-                {
-                    <tr class="gradeC">
-                        <td>@category.Id</td>
-                        <td>@category.CategoryName</td>
-                        <td>
-                            @Html.ActionLink("Düzenle", "Update", new { id = category.Id }, new { @class = "btn btn-info" }) |
-                            @Html.ActionLink("Sil", "Delete", new { id = category.Id }, new { @class = "btn btn-danger" })
-                        </td>
+            @foreach (var category in Model.Categories)
+            {
+                <tr class="gradeC">
+                    <td>@category.Id</td>
+                    <td>@category.CategoryName</td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Update", new { id = category.Id }, new { @class = "btn btn-info" }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = category.Id }, new { @class = "btn btn-danger" })
+                    </td>
 
-                    </tr>
-                }
+                </tr>
+            }
 
             </tbody>
         </table>
     </div>
+</div>
 </div>
