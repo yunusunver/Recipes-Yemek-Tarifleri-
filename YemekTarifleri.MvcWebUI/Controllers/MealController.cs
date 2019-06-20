@@ -14,10 +14,12 @@ namespace YemekTarifleri.MvcWebUI.Controllers
     public class MealController : Controller
     {
         private IMealService _mealService;
+        private ICategoryService _categoryService;
 
-        public MealController(IMealService mealService)
+        public MealController(IMealService mealService,ICategoryService categoryService)
         {
             _mealService = mealService;
+            _categoryService = categoryService;
         }
 
         // GET: Meal
@@ -32,7 +34,13 @@ namespace YemekTarifleri.MvcWebUI.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            MealViewModel model=new MealViewModel
+            {
+                Categories = new SelectList(_categoryService.GetAll(),"Id","CategoryName").ToList(),
+                Meal = new Meal()
+
+            };
+            return View(model);
         }
 
         [HttpPost]
@@ -61,6 +69,39 @@ namespace YemekTarifleri.MvcWebUI.Controllers
                 System.IO.File.Delete(Server.MapPath(meal.Image));
             }
             _mealService.Delete(meal);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Update(int id)
+        {
+            var meal = _mealService.GetById(id);
+            MealViewModel model=new MealViewModel
+            {
+                Categories = new SelectList(_categoryService.GetAll(),"Id","CategoryName"),
+                Meal = meal
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Meal meal,HttpPostedFileBase image,string currentImage)
+        {
+            if (image != null)
+            {
+                if (System.IO.File.Exists(Server.MapPath(meal.Image)))
+                {
+                    System.IO.File.Delete(Server.MapPath(meal.Image));
+                }
+
+                WebImage img = new WebImage(image.InputStream);
+                FileInfo imgInfo = new FileInfo(image.FileName);
+
+                string newImage = Guid.NewGuid().ToString() + imgInfo.Extension;
+                img.Resize(800, 350);
+                img.Save("~/Uploads/Meal/" + newImage);
+                meal.Image = "/Uploads/Meal/" + newImage;
+            }
+            _mealService.Update(meal);
             return RedirectToAction("Index");
         }
     }

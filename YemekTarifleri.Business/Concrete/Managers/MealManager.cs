@@ -23,13 +23,13 @@ namespace YemekTarifleri.Business.Concrete.Managers
 
         public List<Meal> GetAll()
         {
-            var meals = _mapper.Map<List<Meal>>(_mealDal.GetList());
-            return meals;
+            return _mealDal.GetAllMeal();
+            
         }
 
         public Meal GetById(int id)
         {
-            return _mealDal.Get(x => x.Id == id);
+            return _mealDal.GetMeal(x => x.Id == id);
         }
 
         public Meal Add(Meal meal)

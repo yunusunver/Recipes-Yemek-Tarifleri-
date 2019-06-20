@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using YemekTarifleri.Core.DataAccess.NHibernate;
@@ -13,6 +14,16 @@ namespace YemekTarifleri.DataAccess.Concrete.NHibernate
     {
         public NhMealDal(NHibernateHelper nHibernateHelper) : base(nHibernateHelper)
         {
+        }
+
+        public List<Meal> GetAllMeal()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Meal GetMeal(Expression<Func<Meal, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

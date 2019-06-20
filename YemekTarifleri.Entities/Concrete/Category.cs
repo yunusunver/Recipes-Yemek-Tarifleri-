@@ -12,5 +12,12 @@ namespace YemekTarifleri.Entities.Concrete
         public virtual int Id { get; set; }
         public virtual string CategoryName { get; set; }
 
+        public virtual List<Meal> Meal { get; set; }
+
+        public Category()
+        {
+            Meal = new List<Meal>();
+        }
+
     }
 }

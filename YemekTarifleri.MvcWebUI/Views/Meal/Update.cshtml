@@ -17,15 +17,16 @@
                 <div class="widget-box">
                     <div class="widget-title">
                         <span class="icon"> <i class="icon-info-sign"></i> </span>
-                        <h5>Tarif Oluştur</h5>
+                        <h5>Tarifi Güncelle</h5>
                     </div>
                     <div class="widget-content nopadding">
-                        @using (Html.BeginForm(Html.BeginForm("Create", "Meal", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", name = "basic_validate", id = "basic_validate", novalidate = "novalidate" })))
+                        @using (Html.BeginForm(Html.BeginForm("Update", "Meal", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", name = "basic_validate", id = "basic_validate", novalidate = "novalidate" })))
                         {
+                            @Html.HiddenFor(model => model.Meal.Id)
                             <div class="control-group">
                                 <label class="control-label">Kategoriler</label>
                                 <div class="controls">
-                                    @Html.DropDownListFor(model => model.Meal.CategoryId, (IEnumerable<SelectListItem>)Model.Categories, new { @class="form-control" })
+                                    @Html.DropDownListFor(model => model.Meal.CategoryId, (IEnumerable<SelectListItem>)Model.Categories, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.Meal.CategoryId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -54,7 +55,7 @@
                                 </div>
                             </div>
 
-                      
+
 
                             <div class="control-group">
                                 <label class="control-label">Pişirme Süresi</label>
@@ -80,13 +81,19 @@
                                 </div>
                             </div>
 
-
-
                             <div class="control-group">
                                 <label class="control-label">Resim </label>
                                 <div class="controls">
-                                    <input type="file" id="image" name="image" class="form-control" accept=".jpg,.png" />
+                                    <img src="@Model.Meal.Image" height="100px" width="100px" />
                                     @Html.ValidationMessageFor(model => model.Meal.Image, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Resim Değiştir</label>
+                                <div class="controls">
+                                    <input type="file" id="image" name="image" class="form-control" accept=".jpg,.png" Value="@Model.Meal.Image"/>
+                                    @Html.ValidationMessageFor(model => model.Meal.Image, "", new {@class = "text-danger"})
                                 </div>
                             </div>
 

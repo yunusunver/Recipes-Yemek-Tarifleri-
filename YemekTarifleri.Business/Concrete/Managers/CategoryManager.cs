@@ -35,8 +35,8 @@ namespace YemekTarifleri.Business.Concrete.Managers
         //[SecuredOperation(Roles = "Admin")]
         public List<Category> GetAll()
         {
-            var categories = _mapper.Map<List<Category>>(_categoryDal.GetList());
-            return categories;
+            return _categoryDal.GetList();
+           
         }
 
         public Category GetById(int id)

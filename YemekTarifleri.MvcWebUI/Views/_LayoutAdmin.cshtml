@@ -12,6 +12,7 @@
     <link href="~/Content/admin/css/matrix-style.css" rel="stylesheet" />
     <link href="~/Content/admin/css/matrix-media.css" rel="stylesheet" />
     <link href="~/Content/admin/font-awesome/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/admin/css/bootstrap-wysihtml5.css" rel="stylesheet" />
     <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
@@ -99,8 +100,8 @@
     <!--main-container-part-->
     <div id="content">
         <!--breadcrumbs-->
-      
-            @RenderBody()
+
+        @RenderBody()
     </div>
 
     <!--end-main-container-part-->
@@ -133,6 +134,12 @@
     <script src="~/Scripts/Admin/js/jquery.dataTables.min.js"></script>
     <script src="~/Scripts/Admin/js/matrix.tables.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/Admin/js/bootstrap-wysihtml5.js"></script>
+    <script src="~/Scripts/Admin/js/wysihtml5-0.3.0.js"></script>
+
+    <script>
+        $('.textarea_editor').wysihtml5();
+    </script>
 
     <script type="text/javascript">
         // This function is called from the pop-up menus to transfer to
