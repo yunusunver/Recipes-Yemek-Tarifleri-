@@ -39,5 +39,10 @@ namespace YemekTarifleri.MvcWebUI.Controllers
 
             return "Not Authenticated";
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }
