@@ -12,5 +12,7 @@ namespace YemekTarifleri.Business.Abstract
     {
         User GetByUserNameAndPassword(string userName,string password);
         List<UserRoleItem> GetUserRoles(User user);
+
+        User GetByEmail(string email);
     }
 }
