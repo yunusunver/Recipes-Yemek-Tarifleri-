@@ -46,6 +46,17 @@ namespace YemekTarifleri.MvcWebUI.Controllers
             return RedirectToAction("Login");
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel registerUser)
+        {
+            
+            return RedirectToAction("Login");
+        }
+
 
     }
 }
