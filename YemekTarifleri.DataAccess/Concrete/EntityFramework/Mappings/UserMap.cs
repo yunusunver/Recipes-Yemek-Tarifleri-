@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace YemekTarifleri.DataAccess.Concrete.EntityFramework.Mappings
             ToTable(@"User", @"dbo");
             HasKey(x => x.Id);
 
-            Property(x => x.Id).HasColumnName("Id");
+            Property(x => x.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Email).HasColumnName("Email");
             Property(x => x.FirstName).HasColumnName("FirstName");
             Property(x => x.LastName).HasColumnName("LastName");

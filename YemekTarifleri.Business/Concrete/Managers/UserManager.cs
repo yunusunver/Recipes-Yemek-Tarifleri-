@@ -33,5 +33,10 @@ namespace YemekTarifleri.Business.Concrete.Managers
         {
             return _userDal.Get(x => x.Email == email);
         }
+
+        public User Add(User user)
+        {
+            return _userDal.Add(user);
+        }
     }
 }

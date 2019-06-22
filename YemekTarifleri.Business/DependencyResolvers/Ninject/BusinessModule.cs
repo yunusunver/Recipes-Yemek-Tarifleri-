@@ -25,6 +25,9 @@ namespace YemekTarifleri.Business.DependencyResolvers.Ninject
             Bind<IMealDal>().To<EfMealDal>();
             Bind<IMealService>().To<MealManager>().InSingletonScope();
 
+            Bind<IUserRoleDal>().To<EfUserRoleDal>();
+            Bind<IUserRoleService>().To<UserRoleManager>();
+
             Bind<IUserDal>().To<EfUserDal>();
             Bind<IUserService>().To<UserManager>().InSingletonScope();
 

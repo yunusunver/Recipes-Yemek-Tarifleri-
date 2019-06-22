@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using YemekTarifleri.Business.Abstract;
 using YemekTarifleri.Core.CrossCuttingConcerns.Security.Web;
+using YemekTarifleri.Entities.Concrete;
 using YemekTarifleri.MvcWebUI.Models;
 
 namespace YemekTarifleri.MvcWebUI.Controllers
@@ -12,10 +13,12 @@ namespace YemekTarifleri.MvcWebUI.Controllers
     public class AccountController : Controller
     {
         private IUserService _userService;
+        private IUserRoleService _userRoleService;
 
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService,IUserRoleService userRoleService)
         {
             _userService = userService;
+            _userRoleService = userRoleService;
         }
 
         public ActionResult Login()
@@ -51,9 +54,12 @@ namespace YemekTarifleri.MvcWebUI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Register(RegisterViewModel registerUser)
+        public ActionResult Register(User registerUser)
         {
-            
+            _userService.Add(registerUser);
+            var userRole = _userRoleService.Get(x=>x.Role.Name.Equals("User"));
+            _userRoleService.Add(new UserRole {UserId = registerUser.Id, RoleId = userRole.RoleId});
+
             return RedirectToAction("Login");
         }
 

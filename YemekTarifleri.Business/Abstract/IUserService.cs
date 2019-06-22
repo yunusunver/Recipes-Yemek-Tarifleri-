@@ -14,5 +14,6 @@ namespace YemekTarifleri.Business.Abstract
         List<UserRoleItem> GetUserRoles(User user);
 
         User GetByEmail(string email);
+        User Add(User user);
     }
 }

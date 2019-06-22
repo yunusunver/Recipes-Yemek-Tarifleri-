@@ -71,9 +71,11 @@
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IMealDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Abstract\IUserRoleDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMealDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserRoleDal.cs" />
     <Compile Include="Concrete\EntityFramework\FoodContext.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\MealMap.cs" />

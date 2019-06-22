@@ -66,10 +66,12 @@
   <ItemGroup>
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IMealService.cs" />
+    <Compile Include="Abstract\IUserRoleService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\Managers\CategoryManager.cs" />
     <Compile Include="Concrete\Managers\MealManager.cs" />
     <Compile Include="Concrete\Managers\UserManager.cs" />
+    <Compile Include="Concrete\Managers\UserRoleManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\AutoMapperModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\InstanceFactory.cs" />
