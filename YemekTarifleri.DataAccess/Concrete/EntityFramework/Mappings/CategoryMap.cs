@@ -19,6 +19,7 @@ namespace YemekTarifleri.DataAccess.Concrete.EntityFramework.Mappings
 
             Property(x => x.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.CategoryName).HasColumnName("CategoryName");
+            Property(x => x.Image).HasColumnName("Image");
         }
     }
 }

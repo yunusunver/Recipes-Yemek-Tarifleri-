@@ -25,6 +25,7 @@
             <tr>
                 <th>Id</th>
                 <th>Kategori Adı</th>
+                <th>Resim</th>
                 <th>İşlemler</th>
             </tr>
             </thead>
@@ -35,6 +36,7 @@
                 <tr class="gradeC">
                     <td>@category.Id</td>
                     <td>@category.CategoryName</td>
+                    <td>@category.Image</td>
                     <td>
                         @Html.ActionLink("Düzenle", "Update", new { id = category.Id }, new { @class = "btn btn-info" }) |
                         @Html.ActionLink("Sil", "Delete", new { id = category.Id }, new { @class = "btn btn-danger" })

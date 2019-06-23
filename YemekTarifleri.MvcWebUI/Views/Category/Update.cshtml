@@ -28,6 +28,22 @@
                             </div>
                         </div>
 
+                        <div class="control-group">
+                            <label class="control-label">Resim </label>
+                            <div class="controls">
+                                <img src="@Model.Image" height="100px" width="100px" />
+                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Resim Değiştir</label>
+                            <div class="controls">
+                                <input type="file" id="image" name="image" class="form-control" accept=".jpg,.png" Value="@Model.Image"/>
+                                @Html.ValidationMessageFor(model => model.Image, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
                         <div class="form-actions">
                             <input type="submit" value="Güncelle" class="btn btn-success">
                         </div>

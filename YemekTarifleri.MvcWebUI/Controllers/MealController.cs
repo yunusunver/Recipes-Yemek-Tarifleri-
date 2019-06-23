@@ -6,11 +6,13 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using YemekTarifleri.Business.Abstract;
+using YemekTarifleri.Core.Aspects.Postsharp.AuthorizationAspects;
 using YemekTarifleri.Entities.Concrete;
 using YemekTarifleri.MvcWebUI.Models;
 
 namespace YemekTarifleri.MvcWebUI.Controllers
 {
+    [SecuredOperation(Roles = "Admin")]
     public class MealController : Controller
     {
         private IMealService _mealService;

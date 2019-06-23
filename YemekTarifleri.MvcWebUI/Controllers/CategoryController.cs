@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using YemekTarifleri.Business.Abstract;
+using YemekTarifleri.Core.Aspects.Postsharp.AuthorizationAspects;
 using YemekTarifleri.Entities.Concrete;
 using YemekTarifleri.MvcWebUI.Models;
 
 namespace YemekTarifleri.MvcWebUI.Controllers
 {
+    [SecuredOperation(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private ICategoryService _categoryService;
@@ -34,8 +38,18 @@ namespace YemekTarifleri.MvcWebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Category category)
+        public ActionResult Create(Category category,HttpPostedFileBase image)
         {
+            if (image != null)
+            {
+                WebImage img = new WebImage(image.InputStream);
+                FileInfo imgInfo = new FileInfo(image.FileName);
+
+                string newImage = Guid.NewGuid().ToString() + imgInfo.Extension;
+                img.Resize(800, 350);
+                img.Save("~/Uploads/Category/" + newImage);
+                category.Image = "/Uploads/Category/" + newImage;
+            }
             _categoryService.Add(category);
             return RedirectToAction("Index");
         }
@@ -47,8 +61,23 @@ namespace YemekTarifleri.MvcWebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(Category category)
+        public ActionResult Update(Category category,HttpPostedFileBase image)
         {
+            if (image != null)
+            {
+                if (System.IO.File.Exists(Server.MapPath(category.Image)))
+                {
+                    System.IO.File.Delete(Server.MapPath(category.Image));
+                }
+
+                WebImage img = new WebImage(image.InputStream);
+                FileInfo imgInfo = new FileInfo(image.FileName);
+
+                string newImage = Guid.NewGuid().ToString() + imgInfo.Extension;
+                img.Resize(800, 350);
+                img.Save("~/Uploads/Category/" + newImage);
+                category.Image = "/Uploads/Category/" + newImage;
+            }
             _categoryService.Update(category);
             return RedirectToAction("Index");
         }
