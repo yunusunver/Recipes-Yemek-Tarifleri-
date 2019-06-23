@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using YemekTarifleri.Business.Abstract;
 using YemekTarifleri.Core.CrossCuttingConcerns.Security.Web;
 using YemekTarifleri.Entities.Concrete;
@@ -61,6 +62,12 @@ namespace YemekTarifleri.MvcWebUI.Controllers
             _userRoleService.Add(new UserRole {UserId = registerUser.Id, RoleId = userRole.RoleId});
 
             return RedirectToAction("Login");
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
 
 
