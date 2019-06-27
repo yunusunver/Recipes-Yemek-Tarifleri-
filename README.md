@@ -33,7 +33,7 @@ Bu projeyi aşağıdaki listelediğim teknolojileri, tasarım kalıplarını ve 
 | Değişken Adı | Veri Tipi | Uzunluk | Açıklama |
 | --- | --- | --- | --- |
 | Id | int |   | Kategori ID Numarası |
-| CategoryName | Nvarchar | 50 | Kategori İsmi |
+| CategoryName | nvarchar | 50 | Kategori İsmi |
 | Image | nvarchar | MAX | Kategori Resmi |
 
 
@@ -45,31 +45,31 @@ Bu projeyi aşağıdaki listelediğim teknolojileri, tasarım kalıplarını ve 
 | UserId | int |  | Kullanıcı Id |
 | CategoryId | int |  | Kategori Id |
 | Name | varchar |  50 | Tarif İsmi |
-| Description | varchar | MAX  | Açıklama |
-| CookingTime | varchar | 50  | Pişirme Süresi |
-| PersonQuantity | varchar | 50  | Kaç Kişilik |
-| PreparationTime | varchar |  50 | Hazırlama Süresi |
+| Description | nvarchar | MAX  | Açıklama |
+| CookingTime | nvarchar | 50  | Pişirme Süresi |
+| PersonQuantity | nvarchar | 50  | Kaç Kişilik |
+| PreparationTime | nvarchar |  50 | Hazırlama Süresi |
 | Point | int | 50  | varchar |
 | CreatedDate | DateTime |   | Oluşturulma Tarihi |
-| Image | varchar | MAX | Resim |
+| Image | nvarchar | MAX | Resim |
 
 ### Role Tablosu
 
 | Değişken Adı | Veri Tipi | Uzunluk | Açıklama |
 | --- | --- | --- | --- |
 | Id | int |   | Rol Id |
-| Name | varchar | 50 | Rol Adı |
+| Name | nvarchar | 50 | Rol Adı |
 
 ### User Tablosu
 
 | Değişken Adı | Veri Tipi | Uzunluk | Açıklama |
 | --- | --- | --- | --- |
 | Id | int |   | Kullanıcı Id |
-| UserName | varchar | 50 | Kullanıcı Adı |
-| Password | varchar |  100 | Parola |
-| FirstName | varchar | 50 | Kullanıcı Adı |
-| LastName | varchar |  50 | Kullanıcı Soyadı |
-| Email | varchar | 50 | Mail Adresi |
+| UserName | nvarchar | 50 | Kullanıcı Adı |
+| Password | nvarchar |  100 | Parola |
+| FirstName | nvarchar | 50 | Kullanıcı Adı |
+| LastName | nvarchar |  50 | Kullanıcı Soyadı |
+| Email | nvarchar | 50 | Mail Adresi |
 
 
 ### UserRole Tablosu
